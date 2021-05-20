@@ -310,17 +310,17 @@ REAL   ,            INTENT(INOUT):: PSTACK (KSTSZ)
 
 !-----------------------------------------------------------------------
 
-!temp (REAL, ZCDNH, (KLON))
-!temp (REAL, ZDELT, (KLON))
-!temp (REAL, ZDPHI, (KLON))
-!temp (REAL, ZESP, (KLON))
-!temp (REAL, ZU, (KLON))
-!temp (REAL, ZSTABV, (KLON))
-!temp (REAL, ZCDMR, (KLON))
-!temp (REAL, ZCDNMR, (KLON))
+temp (REAL, ZCDNH, (KLON))
+temp (REAL, ZDELT, (KLON))
+temp (REAL, ZDPHI, (KLON))
+temp (REAL, ZESP, (KLON))
+temp (REAL, ZU, (KLON))
+temp (REAL, ZSTABV, (KLON))
+temp (REAL, ZCDMR, (KLON))
+temp (REAL, ZCDNMR, (KLON))
 
-REAL(KIND=JPRB) :: ZCDNH(KLON),ZDELT(KLON),ZDPHI(KLON),ZESP(KLON)&
- & ,ZU(KLON),ZSTABV(KLON),ZCDMR(KLON),ZCDNMR(KLON), ZQSATS(KLON)
+!!REAL(KIND=JPRB) :: ZCDNH(KLON),ZDELT(KLON),ZDPHI(KLON),ZESP(KLON)&
+!! & ,ZU(KLON),ZSTABV(KLON),ZCDMR(KLON),ZCDNMR(KLON), ZQSATS(KLON)
 
 INTEGER(KIND=JPIM) :: JLON
 
@@ -343,16 +343,16 @@ REAL(KIND=JPRB) :: Z0CR, Z2B, Z3B, Z3BC, ZA1, ZAPRIM, ZAT, ZAU,&
 #include "fcttrm.func.h"
 
 
-!init_stack ()
+init_stack ()
 
-!alloc (ZCDNH)
-!alloc (ZDELT)
-!alloc (ZDPHI)
-!alloc (ZESP)
-!alloc (ZU)
-!alloc (ZSTABV)
-!alloc (ZCDMR)
-!alloc (ZCDNMR)
+alloc (ZCDNH)
+alloc (ZDELT)
+alloc (ZDPHI)
+alloc (ZESP)
+alloc (ZU)
+alloc (ZSTABV)
+alloc (ZCDMR)
+alloc (ZCDNMR)
 
 
 ASSOCIATE(GCISMIN=>YRPHY0%GCISMIN, VKARMN=>YRPHY0%VKARMN, &
@@ -553,22 +553,7 @@ DO JLON=KIDIA,KFDIA
 !            : SATURATION WATER VAPOUR PRESSURE OVER PRESSURE.
 
   ZEW= FOEW (PTS(JLON),ZDELT(JLON))
-!PRINT *, 'ZEW=', ZEW
   ZESP(JLON)=ZEW/PAPRS(JLON,KLEV)
-!PRINT *, 'ZESP(JLON)', ZESP(JLON)
-
-!PRINT *,'res = ', ZESP(JLON) / ( 1.0_JPRB+RETV*MAX(0.0_JPRB,&
-!    &(1.0_JPRB-ZESP(JLON))) )
-!PRINT *, 'fonction =' , FOQS (ZESP(JLON))
-  ZTEST = FOQS(ZESP(JLON))  
-!PRINT *, 'ZTEST =' , ZTEST
-
-  ZQSATS(JLON) = ZTEST
-!PRINT *, 'ZTEST2 =' , ZQSATS(JLON)
-
-  PQSATS(JLON) = ZQSATS(JLON)
-!PRINT *, 'ZTEST2i =' 
-
   PQSATS(JLON)= FOQS (ZESP(JLON))
 !PRINT *, 'PQSATS(JLON)', PQSATS(JLON)
 
