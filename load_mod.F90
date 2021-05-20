@@ -162,20 +162,22 @@ SUBROUTINE LOADX2 (ILUN, X2)
 INTEGER                   :: ILUN
 REAL (KIND=JPRB), POINTER :: X2 (:,:)
 INTEGER :: IL (2), IB (2)
+!PRINT *, 'ILUN=', ILUN
+
 READ (ILUN) IL
 READ (ILUN) IB
 
-PRINT *,'IL=', IL
-PRINT *,'IB=', IB
-PRINT *,'IL(1)=', IL(1)
-PRINT *,'IB(1)=', IB(1)
-PRINT *,'IL(2)=', IL(2)
-PRINT *,'IB(2)=', IB(2)
-PRINT *, 'X2', X2
 
-PRINT *,'res=',X2 (IL (1): IB (1), IL (2): IB (2))
+!PRINT *,'IL=', IL
+!PRINT *,'IB=', IB
+!PRINT *,'IL(1)=', IL(1)
+!PRINT *,'IB(1)=', IB(1)
+!PRINT *,'IL(2)=', IL(2)
+!PRINT *,'IB(2)=', IB(2)
+!PRINT *, 'X2', X2
 
 ALLOCATE (X2 (IL (1): IB (1), IL (2): IB (2)))
+!PRINT *,'res=',X2 (IL (1): IB (1), IL (2): IB (2))
 READ (ILUN) X2
 END SUBROUTINE LOADX2
 
