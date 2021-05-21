@@ -6,10 +6,18 @@ FRTFLAGS = -convert big_endian -assume byterecl -traceback -qopenmp -qopenmp-thr
 OPT_FRTFLAGS = -fp-model source -g -O2 -ip -check bounds -debug full
 
 #FC = /home/gmap/mrpm/marguina/install/gmkpack_support/wrapper/I185274/ifort $(FRTFLAGS) $(OPT_FRTFLAGS)
-FC = /home/gmap/mrpm/marguina/install/gmkpack_support/wrapper/I185274/ifort $(FRTFLAGS) -g -O0 -DUSE_STACK
+#FC = /home/gmap/mrpm/marguina/install/gmkpack_support/wrapper/I185274/ifort $(FRTFLAGS) -g -O0 -DUSE_STACK
 
 #FC = pgf90 -r8 -acc -mp -byteswapio -Mlarge_arrays -fast -Minfo=accel,all,intensity,ccff -ta=tesla:managed -O3
 #FC = pgf90 -r8 -mp -byteswapio -Mlarge_arrays -Minfo=mp -mp -O0 -g -DUSE_STACK
+
+
+FC = /home/gmap/mrpm/marguina/install/gmkpack_support/wrapper/I161150/ifort $(FRTFLAGS) $(OPT_FRTFLAGS)
+#FC = /home/gmap/mrpm/marguina/install/gmkpack_support/wrapper/I161150/ifort $(FRTFLAGS) -g -O0
+FC = pgf90 -mp -byteswapio -Mlarge_arrays -O0 -g -DUSE_STACK
+#FC = pgf90 -acc -byteswapio -Mlarge_arrays -fast -Minfo=accel,all,intensity,ccff -O2 -g -DUSE_STACK -ta=tesla:lineinfo,ptxinfo -DUSE_ACC
+
+
 
 all: wrap_achmt.x
 
