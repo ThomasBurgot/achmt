@@ -9,12 +9,12 @@ SUBROUTINE ACNTCLS ( KIDIA,KFDIA,KLON,KLEV,&
 
 USE PARKIND1  ,ONLY : JPIM     ,JPRB
 
-USE YOMPHY   , ONLY : YRPHY
-USE YOMCST   , ONLY : RV       ,RCPD     ,RCPV     ,RETV     ,&
- & RCW      ,RCS      ,RLVTT    ,RLSTT    ,RTT      ,&
- & RALPW    ,RBETW    ,RGAMW    ,RALPS    ,RBETS    ,&
- & RGAMS    ,RALPD    ,RBETD    ,RGAMD  
-USE YOMPHY0  , ONLY : YRPHY0
+!USE YOMPHY   , ONLY : YRPHY
+!USE YOMCST   , ONLY : RV       ,RCPD     ,RCPV     ,RETV     ,&
+! & RCW      ,RCS      ,RLVTT    ,RLSTT    ,RTT      ,&
+! & RALPW    ,RBETW    ,RGAMW    ,RALPS    ,RBETS    ,&
+! & RGAMS    ,RALPD    ,RBETD    ,RGAMD  
+!USE YOMPHY0  , ONLY : YRPHY0
 
 !-----------------------------------------------------------------------
 
