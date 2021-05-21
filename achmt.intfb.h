@@ -26,16 +26,16 @@ SUBROUTINE ACHMT ( KIDIA,KFDIA,KLON,KLEV,LDZ0H,&
 
 USE PARKIND1  ,ONLY : JPIM     ,JPRB     ,JPRD
 
-USE YOMPHY   , ONLY : YRPHY
-USE YOMCST   , ONLY : RPI      ,RG       ,RD       ,RV       ,&
- & RCPD     ,RCPV     ,RKAPPA   ,RETV     ,RCW      ,&
- & RCS      ,RLVTT    ,RLSTT    ,RTT      ,RALPW    ,&
- & RBETW    ,RGAMW    ,RALPS    ,RBETS    ,RGAMS    ,&
- & RALPD    ,RBETD    ,RGAMD  
-USE YOMPHY0  , ONLY : YRPHY0
-USE YOMPHY1  , ONLY : YRPHY1
-USE YOMPHY2  , ONLY : YRPHY2
-USE YOMCLI   , ONLY : STHER    ,SZZ0D
+!USE YOMPHY   , ONLY : YRPHY
+!USE YOMCST   , ONLY : RPI      ,RG       ,RD       ,RV       ,&
+! & RCPD     ,RCPV     ,RKAPPA   ,RETV     ,RCW      ,&
+! & RCS      ,RLVTT    ,RLSTT    ,RTT      ,RALPW    ,&
+! & RBETW    ,RGAMW    ,RALPS    ,RBETS    ,RGAMS    ,&
+! & RALPD    ,RBETD    ,RGAMD  
+!USE YOMPHY0  , ONLY : YRPHY0
+!USE YOMPHY1  , ONLY : YRPHY1
+!USE YOMPHY2  , ONLY : YRPHY2
+!USE YOMCLI   , ONLY : STHER    ,SZZ0D
 
 
 INTEGER(KIND=JPIM),INTENT(IN)    :: KLON 

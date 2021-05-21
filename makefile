@@ -33,9 +33,27 @@ xrd_getoptions.o: xrd_getoptions.F90 xrd_unix_env.o parkind1.o
 xrd_unix_env.o: xrd_unix_env.F90 parkind1.o
 	$(FC) -c xrd_unix_env.F90
 
+yomcst.o: yomcst.F90
+	$(FC) -c yomcst.F90
+
+yomcli.o: yomcli.F90
+	$(FC) -c yomcli.F90
+
+yomphy.o: yomphy.F90
+	$(FC) -c yomphy.F90
+
+yomphy0.o: yomphy0.F90
+	$(FC) -c yomphy0.F90
+
+yomphy1.o: yomphy1.F90
+	$(FC) -c yomphy1.F90
+
+yomphy2.o: yomphy2.F90
+	$(FC) -c yomphy2.F90
+
+
 load_mod.o: load_mod.F90 parkind1.o
 	$(FC) -c load_mod.F90
-
 
 load_yomphy_mod.o: load_yomphy_mod.F90 yomphy.o load_tphy_mod.o
 	$(FC) -c load_yomphy_mod.F90
