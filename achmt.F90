@@ -310,14 +310,14 @@ REAL   ,            INTENT(INOUT):: PSTACK (KSTSZ)
 
 !-----------------------------------------------------------------------
 
-temp (REAL, ZCDNH, (KLON))
-temp (REAL, ZDELT, (KLON))
-temp (REAL, ZDPHI, (KLON))
-temp (REAL, ZESP, (KLON))
-temp (REAL, ZU, (KLON))
-temp (REAL, ZSTABV, (KLON))
-temp (REAL, ZCDMR, (KLON))
-temp (REAL, ZCDNMR, (KLON))
+temp (REAL(KIND=JPRB), ZCDNH, (KLON))
+temp (REAL(KIND=JPRB), ZDELT, (KLON))
+temp (REAL(KIND=JPRB), ZDPHI, (KLON))
+temp (REAL(KIND=JPRB), ZESP, (KLON))
+temp (REAL(KIND=JPRB), ZU, (KLON))
+temp (REAL(KIND=JPRB), ZSTABV, (KLON))
+temp (REAL(KIND=JPRB), ZCDMR, (KLON))
+temp (REAL(KIND=JPRB), ZCDNMR, (KLON))
 
 !!REAL(KIND=JPRB) :: ZCDNH(KLON),ZDELT(KLON),ZDPHI(KLON),ZESP(KLON)&
 !! & ,ZU(KLON),ZSTABV(KLON),ZCDMR(KLON),ZCDNMR(KLON), ZQSATS(KLON)
