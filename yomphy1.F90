@@ -311,7 +311,7 @@ INTEGER(KIND=JPIM) :: NCHSP
 
 END TYPE TPHY1
 
-TYPE(TPHY1), POINTER :: YRPHY1 => NULL()
-
+TYPE(TPHY1) :: YRPHY1 
+!$acc declare create(YRPHY1)
 !     ------------------------------------------------------------------
 END MODULE YOMPHY1

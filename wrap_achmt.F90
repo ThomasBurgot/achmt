@@ -367,12 +367,37 @@ ENDDO
 
 ELSE
 
-!$OMP PARALLEL DO PRIVATE (IBL, JIDIA, JFDIA, JLON)
+
+
+!$acc parallel loop gang vector collapse (2) private (IBL, JLON, JIDIA, JFDIA) &
+!$acc  & copy (PAPHI_ALL, PAPHIF_ALL, PAPRS_ALL,& 
+!$acc  & PAPRSF_ALL, PCP_ALL,PQ_ALL,      & 
+!$acc  & PR_ALL, PT_ALL, PU_ALL,          & 
+!$acc  & PV_ALL, PFPLSH_ALL, PFPLCH_ALL,  & 
+!$acc  & PDPHIT_ALL, PDPHIV_ALL, PGZ0F_ALL,     & 
+!$acc  & PGZ0HF_ALL, PGZ0RLF_ALL, PHV_ALL,      & 
+!$acc  & PLSM_ALL, PNEIJG_ALL, PNEIJV_ALL,      & 
+!$acc  & PSNS_ALL, PTS_ALL, PVEG0_ALL,          & 
+!$acc  & PWFC_ALL, PWS_ALL, PWSI_ALL,           & 
+!$acc  & PNBVNO_ALL, PMRIPP_ALL, PCD_ALL,   & 
+!$acc  & PCDN_ALL, PCDROV_ALL, PCH_ALL,         & 
+!$acc  & PCHROV_ALL, PCPS_ALL, PDQSTS_ALL,      & 
+!$acc  & PGWDCS_ALL, PGZ0_ALL, PGZ0H_ALL,       & 
+!$acc  & PHQ_ALL, PHU_ALL, PNEIJ_ALL,           & 
+!$acc  & PQCLS_ALL, PQS_ALL, PQSATS_ALL,        & 
+!$acc  & PRHCLS_ALL, PRS_ALL, PRTI_ALL,         & 
+!$acc  & PSTAB_ALL, PTCLS_ALL, PUCLS_ALL,       & 
+!$acc  & PVCLS_ALL, PUCLN_ALL, PVCLN_ALL,       & 
+!$acc  & PZPCLS_ALL, PVEG_ALL, PXDROV_ALL,      & 
+!$acc  & PXHROV_ALL, PURAF_ALL, PVRAF_ALL,      & 
+!$acc  & PSTACK_ALL)
 
 DO IBL = 1, ICOUNT1
 
-    JIDIA = 1
-    JFDIA = KLON
+    DO JLON = 1, KLON
+
+    JIDIA = JLON
+    JFDIA = JLON
 
     CALL ACHMT (JIDIA,JFDIA,KLON,KLEV,LDZ0H,&
      PAPHI_ALL(:,:,IBL), PAPHIF_ALL(:,:,IBL), PAPRS_ALL(:,:,IBL),& 
@@ -398,8 +423,10 @@ DO IBL = 1, ICOUNT1
      PXHROV_ALL(:,IBL), PURAF_ALL(:,IBL), PVRAF_ALL(:,IBL),      & 
      ISTPT, ISTSZ, PSTACK_ALL(:,IBL))
 
+     ENDDO
+
 ENDDO
-!$OMP END PARALLEL DO
+!$acc end parallel loop
 
 
 ENDIF

@@ -51,7 +51,9 @@ END SUBROUTINE
 SUBROUTINE LOAD_MODD_CLIM
 USE YOMCLI   
 CALL LOAD (ILUN_IN, STHER)
+!$acc update device (STHER)
 CALL LOAD (ILUN_IN, SZZ0D)
+!$acc update device (SZZ0D)
 END SUBROUTINE
 
 
@@ -61,27 +63,49 @@ SUBROUTINE LOAD_MODD_CST
 USE YOMCST
 
 CALL LOAD (ILUN_IN, RPI)
+!$acc update device (RPI)
 CALL LOAD (ILUN_IN, RG)
+!$acc update device (RG)
 CALL LOAD (ILUN_IN, RD)
+!$acc update device (RD)
 CALL LOAD (ILUN_IN, RV)
+!$acc update device (RV)
 CALL LOAD (ILUN_IN, RCPD)
+!$acc update device (RCPD)
 CALL LOAD (ILUN_IN, RCPV)
+!$acc update device (RCPV)
 CALL LOAD (ILUN_IN, RKAPPA)
+!$acc update device (RKAPPA)
 CALL LOAD (ILUN_IN, RETV)
+!$acc update device (RETV)
 CALL LOAD (ILUN_IN, RCW)
+!$acc update device (RCW)
 CALL LOAD (ILUN_IN, RCS)
+!$acc update device (RCS)
 CALL LOAD (ILUN_IN, RLVTT)
+!$acc update device (RLVTT)
 CALL LOAD (ILUN_IN, RLSTT)
+!$acc update device (RLSTT)
 CALL LOAD (ILUN_IN, RTT)
+!$acc update device (RTT)
 CALL LOAD (ILUN_IN, RALPW)
+!$acc update device (RALPW)
 CALL LOAD (ILUN_IN, RBETW)
+!$acc update device (RBETW)
 CALL LOAD (ILUN_IN, RGAMW)
+!$acc update device (RGAMW)
 CALL LOAD (ILUN_IN, RALPS)
+!$acc update device (RALPS)
 CALL LOAD (ILUN_IN, RBETS)
+!$acc update device (RBETS)
 CALL LOAD (ILUN_IN, RGAMS)
+!$acc update device (RGAMS)
 CALL LOAD (ILUN_IN, RALPD)
+!$acc update device (RALPD)
 CALL LOAD (ILUN_IN, RBETD)
+!$acc update device (RBETD)
 CALL LOAD (ILUN_IN, RGAMD)
+!$acc update device (RGAMD)
 END SUBROUTINE
 
 

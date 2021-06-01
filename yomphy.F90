@@ -631,8 +631,8 @@ LOGICAL :: LEDR ! key to activate EDR (3D) diagnostic
 
 END TYPE TPHY
 
-TYPE(TPHY), POINTER :: YRPHY => NULL()
-
+TYPE(TPHY) :: YRPHY 
+!$acc declare create (YRPHY)
 
 !     ------------------------------------------------------------------
 END MODULE YOMPHY

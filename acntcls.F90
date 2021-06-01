@@ -1,3 +1,6 @@
+#ifdef USE_ACC
+!$acc routine(ACNTCLS) seq
+#endif
 !OPTIONS XOPT(NOEVAL)
 SUBROUTINE ACNTCLS ( KIDIA,KFDIA,KLON,KLEV,&
  !-----------------------------------------------------------------------
