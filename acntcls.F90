@@ -169,7 +169,7 @@ REAL(KIND=JPRB)   ,INTENT(OUT)   :: PVCLN(KLON)
 REAL(KIND=JPRB)   ,INTENT(OUT)   :: PZPCLS(KLON) 
 INTEGER,                INTENT(IN)   :: KSTSZ
 INTEGER,                INTENT(IN)   :: KSTPT
-REAL   ,                INTENT(INOUT):: PSTACK (KSTSZ)
+REAL(KIND=JPRB)   ,     INTENT(INOUT):: PSTACK (KSTSZ)
 
 !-----------------------------------------------------------------------
 
